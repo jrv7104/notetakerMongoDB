@@ -16,4 +16,7 @@ export default {
   show(id) {
     return notesConnection.findOne(ObjectId(id));
   },
+  delete(id) {
+    return notesConnection.deleteOne({ _id: ObjectId(id) });
+  },
 };

@@ -34,4 +34,13 @@ router.post("/notes", async (req, res) => {
 }
 });
 
+router.delete("/notes/:id", async (req, res) => {
+  try {
+    await noteController.delete(req.params.id);
+    res.status(204);
+  } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
 export default router;
